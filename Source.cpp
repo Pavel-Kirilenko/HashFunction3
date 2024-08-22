@@ -1,23 +1,23 @@
-#include "Chat.h"
+п»ї#include "Chat.h"
 #include <iostream>
 
 int main() 
 {
     setlocale(LC_ALL, "");
-    system("chcp 1251");                    // строки для корректного отображения кириллических символов
+    system("chcp 1251");                    // СЃС‚СЂРѕРєРё РґР»СЏ РєРѕСЂСЂРµРєС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РєРёСЂРёР»Р»РёС‡РµСЃРєРёС… СЃРёРјРІРѕР»РѕРІ
 
-    Chat chat;                              // Создать объект класса Chat
+    Chat chat;                              // РЎРѕР·РґР°С‚СЊ РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° Chat
 
-    chat.reg("Alice", "password123");       // Демонстрация регистрации пользователей
+    chat.reg("Alice", "password123");       // Р”РµРјРѕРЅСЃС‚СЂР°С†РёСЏ СЂРµРіРёСЃС‚СЂР°С†РёРё РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
     chat.reg("Bob", "qwerty");
     chat.reg("Larry", "space");
 
-    chat.reg("Dazy", "password123");        // Регистрация пользователя с тем же именем для демонстрации квадратичного пробирования
+    chat.reg("Dazy", "password123");        // Р РµРіРёСЃС‚СЂР°С†РёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЃ С‚РµРј Р¶Рµ РёРјРµРЅРµРј РґР»СЏ РґРµРјРѕРЅСЃС‚СЂР°С†РёРё РєРІР°РґСЂР°С‚РёС‡РЅРѕРіРѕ РїСЂРѕР±РёСЂРѕРІР°РЅРёСЏ
     chat.reg("John", "12345");
 
     std::cout << "----- Login Attempts -----" << std::endl;
 
-    if (chat.login("Alice", "password123")) // Демонстрация успешного входа
+    if (chat.login("Alice", "password123")) // Р”РµРјРѕРЅСЃС‚СЂР°С†РёСЏ СѓСЃРїРµС€РЅРѕРіРѕ РІС…РѕРґР°
     {
         std::cout << "Alice logged in successfully!" << std::endl;
     }
@@ -25,7 +25,7 @@ int main()
         std::cout << "Alice failed to log in." << std::endl;
     }
 
-    if (chat.login("Alice", "wrongpass"))    // Демонстрация неудачного входа с неправильным паролем
+    if (chat.login("Alice", "wrongpass"))    // Р”РµРјРѕРЅСЃС‚СЂР°С†РёСЏ РЅРµСѓРґР°С‡РЅРѕРіРѕ РІС…РѕРґР° СЃ РЅРµРїСЂР°РІРёР»СЊРЅС‹Рј РїР°СЂРѕР»РµРј
     {
         std::cout << "Alice logged in successfully!" << std::endl;
     }
@@ -34,9 +34,9 @@ int main()
         std::cout << "Alice failed to log in (wrong password)." << std::endl;
     }
 
-    chat.del("John");                       // Удалить пользователя
+    chat.del("John");                       // РЈРґР°Р»РёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
-    if (chat.login("John", "12345"))        // Попытка логина после удаления пользователя
+    if (chat.login("John", "12345"))        // РџРѕРїС‹С‚РєР° Р»РѕРіРёРЅР° РїРѕСЃР»Рµ СѓРґР°Р»РµРЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     {
         std::cout << "John logged in successfully!" << std::endl;
     }
@@ -44,7 +44,7 @@ int main()
         std::cout << "John failed to log in (user may have been deleted)." << std::endl;
     }
 
-    if (chat.login("Dazy", "password123"))   // Демонстрация коллизии и успешного пробирования
+    if (chat.login("Dazy", "password123"))   // Р”РµРјРѕРЅСЃС‚СЂР°С†РёСЏ РєРѕР»Р»РёР·РёРё Рё СѓСЃРїРµС€РЅРѕРіРѕ РїСЂРѕР±РёСЂРѕРІР°РЅРёСЏ
     {
         std::cout << "Dazy logged in successfully!" << std::endl;
     }
